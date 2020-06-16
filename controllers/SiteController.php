@@ -59,9 +59,37 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionInicio()
     {
-        return $this->render('index');
+        $message = 'Carrousel de imágenes';
+        $images=[
+          [
+            'content' => '<img src="https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"/>',
+            'caption' => '<h4>Escritorio</h4><p>Tomando un café</p>',
+            'options' => []
+          ],
+          [
+            'content' => '<img src="https://i.picsum.photos/id/100/2500/1656.jpg?hmac=gWyN-7ZB32rkAjMhKXQgdHOIBRHyTSgzuOK6U0vXb1w"/>',
+            'caption' => '<h4>Vacaciones</h4><p>En la playa de Sagunto</p>',
+            'options' => []
+          ],
+          [
+            'content' => '<img src="https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g"/>',
+            'caption' => '<h4>Montaña</h4><p>Cruz de la orden</p>',
+            'options' => []
+          ],
+          [
+            'content' => '<img src="https://i.picsum.photos/id/102/4320/3240.jpg?hmac=ico2KysoswVG8E8r550V_afIWN963F6ygTVrqHeHeRc"/>',
+            'caption' => '<h4>Frutas</h4><p>Frambuesas</p>',
+            'options' => []
+          ],
+          [
+            'content' => '<img src="https://i.picsum.photos/id/1015/6000/4000.jpg?hmac=aHjb0fRa1t14DTIEBcoC12c5rAXOSwnVlaA5ujxPQ0I"/>',
+            'caption' => '<h4>Espectacular</h4><p>Paisaje de montaña y río</p>',
+            'options' => []
+          ]
+        ];
+        return $this->render('index',['images'=>$images]);
     }
 
     /**
@@ -116,13 +144,4 @@ class SiteController extends Controller
         ]);
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
-    }
 }
